@@ -23,7 +23,7 @@ export default class NewBill {
     //[Bug Hunt] - Bills - vérification du format d'image par l'extension
     const extension = fileName.split('.').pop()
     console.log(extension)
-    if (extension != "jpg" && extension != "png" && extension != "jpeg") {
+    if (extension != "jpg" && extension != "png" && extension != "jpeg"){
       window.alert("Veuillez télécharger votre fichier au format JPG, JPEG ou PNG")
       this.document.querySelector(`input[data-testid="file"]`).value = ""
     }
