@@ -33,6 +33,7 @@ export default class {
       .bills()
       .list()
       .then(snapshot => {
+        console.log(snapshot)
         //snapshot.sort((a, b) => new Date(b.date) - new Date(a.date))
         const bills = snapshot.sort((a, b) => new Date(b.date) - new Date(a.date))
           .map(doc => {

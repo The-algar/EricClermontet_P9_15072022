@@ -20,6 +20,14 @@ export default class NewBill {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
+    //[Bug Hunt] - Bills - vérification du format d'image par l'extension
+    const extension = fileName.split('.').pop()
+    console.log(extension)
+    if (extension != "jpg" && extension != "png" && extension != "jpeg") {
+      window.alert("Veuillez télécharger votre fichier au format JPG, JPEG ou PNG")
+      this.document.querySelector(`input[data-testid="file"]`).value = ""
+    }
+    
     const formData = new FormData()
     const email = JSON.parse(localStorage.getItem("user")).email
     formData.append('file', file)
