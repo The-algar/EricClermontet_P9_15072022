@@ -81,9 +81,9 @@ describe("Given I am connected as an employee", () => {
 
 // Test d'intégration GET
 
-describe("Given I am a user connected as Employee", () => {
+describe("Given I am connected as an employee", () => {
   describe("When I navigate to Bills", () => {
-    test("fetches bills from mock API GET", async () => {
+    test("Then fetches bills from mock API GET", async () => {
       localStorage.setItem("user", JSON.stringify({ type: "Employee", email: "a@a" }));
       const root = document.createElement("div")
       root.setAttribute("id", "root")
